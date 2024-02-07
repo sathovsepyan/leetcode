@@ -1,0 +1,8 @@
+https://leetcode.com/problems/numbers-with-repeated-digits/description/
+https://leetcode.com/problems/132-pattern/description/
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock
+https://leetcode.com/problems/longest-common-prefix
+https://leetcode.com/problems/increasing-triplet-subsequence
+https://leetcode.com/problems/longest-increasing-subsequence
+https://leetcode.com/problems/letter-combinations-of-a-phone-number
+https://leetcode.com/problems/merge-sorted-array
