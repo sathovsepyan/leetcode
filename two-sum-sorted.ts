@@ -1,29 +1,20 @@
-// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
-
 function twoSum(numbers: number[], target: number): number[] {
+    let low = 0;
+    let high = numbers.length - 1;
 
-    function binarySearch(low: number, high: number, goal: number) {
-        if (high < low) {
-            return -1;
+    while (low < high) {
+        if (numbers[low] + numbers[high] === target) {
+            return [low + 1, high + 1];
         }
-        const mid = low + Math.floor((high - low) / 2);
 
-        if (numbers[mid] === goal) {
-            return mid;
-        }
-        if (numbers[mid] < goal) {
-            return binarySearch(mid + 1, high, goal);
-        }
-        else {
-            return binarySearch(low, mid - 1, goal);
+        if (numbers[low] + numbers[high] < target) {
+            low++;
+        } else {
+            high--;
         }
     }
 
-    for (let l = 0; l < numbers.length - 1; l++) {
-        const r = binarySearch(l + 1, numbers.length - 1, target - numbers[l]);
-        if (r !== -1) {
-            return [l + 1, r + 1];
-        }
-    }
-};
+    return [-1, -1];
+}
 
+console.log(twoSum([2, 7, 11, 15], 18))
