@@ -1,7 +1,6 @@
 // https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 
 function twoSum(numbers: number[], target: number): number[] {
-
     function binarySearch(low: number, high: number, goal: number) {
         if (high < low) {
             return -1;
@@ -25,5 +24,7 @@ function twoSum(numbers: number[], target: number): number[] {
             return [l + 1, r + 1];
         }
     }
+    
+    return [-1, -1];
 };
 
