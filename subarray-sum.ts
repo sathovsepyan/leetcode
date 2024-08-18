@@ -49,9 +49,16 @@ function subarraySumHashMap(nums: number[], k: number): number {
       count++;
     }
 
+    // looking to see if we had a sum of (currentSum - k), such that the sum after that would be k
     count += currentSumFrequency.get(sum - k) ?? 0;
     currentSumFrequency.set(sum, (currentSumFrequency.get(sum) ?? 0) + 1);
   }
 
   return count;
 }
+
+// Example:
+// nums: 3 4 1 6 -3, k = 7
+// currentSumFrequency: {3:1, 7:1, 8:1, 14:1, 11: 1}
+// at index 3, we reach 14, and check that we've had a sum of 7 before.
+// That means the array after that, until now sums to k
