@@ -37,3 +37,21 @@ function subarraySumNoMemory(nums: number[], k: number): number {
   }
   return count;
 }
+
+function subarraySumHashMap(nums: number[], k: number): number {
+  let currentSumFrequency = new Map<number, number>();
+  let sum = 0;
+  let count = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+    if (sum === k) {
+      count++;
+    }
+
+    count += currentSumFrequency.get(sum - k) ?? 0;
+    currentSumFrequency.set(sum, (currentSumFrequency.get(sum) ?? 0) + 1);
+  }
+
+  return count;
+}
