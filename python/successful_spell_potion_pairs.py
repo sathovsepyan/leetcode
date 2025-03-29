@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/successful-pairs-of-spells-and-potions/
+
+
 class Solution:
     def lower_bound(self, arr: list[int], val: float) -> int:
         low = 0
