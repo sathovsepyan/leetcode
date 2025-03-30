@@ -6,6 +6,36 @@ arr1.length === arr2.length && arr1.every((item1, i) => item1 === arr2[i]);
 
 ### Binary search
 
+```python
+def binary_search(arr: list[int], start: int, end: int, val: int) -> int:
+    mid = start + int((end - start) / 2)
+
+    if start > end:
+        return -1
+
+    if val == arr[mid]:
+        return mid
+    elif val > arr[mid]:
+        return binary_search(arr, mid + 1, end, val)
+    elif val < arr[mid]:
+        return binary_search(arr, start, mid, val)
+```
+
+```python
+# Find an index *before* item
+
+lo = 0
+hi = len(arr)
+while lo < hi:
+    mid = (lo + hi) // 2
+    if arr[mid] < r:
+        lo = mid + 1
+    else:
+        hi = mid
+
+return lo
+```
+
 ### Map to array
 
 ```typescript
