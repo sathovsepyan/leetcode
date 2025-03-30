@@ -22,6 +22,8 @@ class Solution:
         for i in range(n - 1, -1, -1):
             # only move i to a lower index, once we have considered all the elements
             # that were smaller than this in the stack
+            # in dec_stack, values are decreasing, indices are increasing :)
+            # so as long as we can go forward, the ramp will increase
             while dec_stack and nums[dec_stack[-1]] <= nums[i]:
                 last = dec_stack.pop()
                 # since we pop dec_stack at most n times, time complexity of the two loops is still O(n)
